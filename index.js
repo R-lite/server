@@ -68,7 +68,7 @@ mongoose.connect(process.env.MONGO_URL, {
 .then(() => {
     app.listen(PORT, () => console.log(`Sever port: ${PORT}`));
     
-    /* POPULATE DB WIRH DUMMY USERS */
+    /* POPULATE DB WIRH DUMMY USERS ONCE FOR TESTING */
     // User.insertMany(users);
     // Post.insertMany(posts); 
 }
