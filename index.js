@@ -52,16 +52,11 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
-app.get('/', (req, res)=>{
-    res.write("Welcome");
-    res.end();
-})
-
 
 /* MONGOOSE SERVER */
 const PORT = process.env.PORT || 5001;
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect('mongodb+srv://raj:78945maxMAX.@primary-db.ud2ezij.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

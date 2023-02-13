@@ -58,6 +58,6 @@ export const login = async(req, res) => {
         delete user.password;
         return res.status(200).json({ token, user });
     } catch (err) {
-        return res.status(400).json(err);
+        return res.status(400).json({msg: "Catch block err", err: err });
     }
 }

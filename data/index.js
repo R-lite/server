@@ -9,6 +9,7 @@ const userIds = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
 ];
 
 export const users = [
@@ -131,6 +132,22 @@ export const users = [
     email: "jessicadunn@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p9.jpeg",
+    friends: [],
+    location: "Washington, DC",
+    occupation: "A Student",
+    viewedProfile: 19420,
+    impressions: 82970,
+    createdAt: 1369908044,
+    updatedAt: 1359322268,
+    __v: 0,
+  },
+  {
+    _id: userIds[8],
+    firstName: "Raji",
+    lastName: "Mumin",
+    email: "muminraj15@gmail.com",
+    password: "$2a$10$um/T717Lai7EeH4QLgJfm.byCASSej1OFZvuSgBMi1ZwsCr3Ec42W",
+    picturePath: "p3.jpeg",
     friends: [],
     location: "Washington, DC",
     occupation: "A Student",
@@ -280,6 +297,27 @@ export const posts = [
       "Never mind, I'm going to play video games",
       "Stop it.",
       "Michael, stop it.",
+    ],
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    userId: userIds[8],
+    firstName: "Raji",
+    lastName: "Mumin",
+    location: "Nigeria",
+    description: "Web Developer",
+    picturePath: "post1.jpeg",
+    userPicturePath: "p3.jpeg",
+    likes: new Map([
+      [userIds[0], true],
+      [userIds[2], true],
+      [userIds[3], true],
+      [userIds[4], true],
+    ]),
+    comments: [
+      "random comment",
+      "another random comment",
+      "yet another random comment",
     ],
   },
 ];
