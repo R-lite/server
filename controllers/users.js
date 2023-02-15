@@ -3,8 +3,8 @@ import User from "../models/User.js";
 /* READ QUERIED USER */
 export const getUser = async(req, res) => {
     try {
-        const { id } = req.params;
-        const user = await User.findOne(id);
+        const { userId } = req.params;
+        const user = await User.findOne(userId);
         res.status(200).json(user);
     } catch (err) {
         res.status(404).json({ error: err.message });
@@ -23,7 +23,9 @@ export const getUserFriends = async(req, res) => {
             ({ _id, firstName, lastName, occupation, location, picturePath}) => {
                 return { _id, firstName, lastName, occupation, location, picturePath }
             }
-        ) ;
+        );
+        console.log(friends);
+        console.log(reFormatFriends);
         res.status(200).json(reFormatFriends);
     } catch (err) {
         res.status(404).json({ error: err.message });
